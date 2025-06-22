@@ -1,13 +1,13 @@
-from tenant.handlers.set_tenant import set_tenant
+from users.handlers.set_user import set_user
 
-from payments.models import PaymentTransactions
-from accounting.models import Allocation, CashFlow
-from bookkeeping.models import *
-from bookkeeping.choices import *
+from project.models import Project
+from utils.models import Config, Settings
+from helpers.models import *
+from helpers.choices import *
 from datetime import datetime
-from loan.models import ApprovedLoan
-from accounting.handlers.allocate_cashflows import AllocationCashFlows
+from tasks.models import Task
+from utils.handlers.process_data import DataProcessor
 
-set_tenant("transwarranty-uat")
+set_user("example-user")
 
-pmt = PaymentTransactions.objects.get(payment_transaction_id='test-transaction-id-1211145') 
+project = Project.objects.get(project_id='example-project-id-12345')

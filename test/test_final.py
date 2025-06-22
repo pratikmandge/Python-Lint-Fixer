@@ -1,10 +1,15 @@
-from payments.models import PaymentTransactions
-from accounting.models import Allocation, CashFlow
-from bookkeeping.models import *
-from bookkeeping.choices import *
 from datetime import datetime
-from loan.models import ApprovedLoan
-from accounting.handlers.allocate_cashflows import AllocationCashFlows
+from typing import List, Optional
+
+import requests
+from django.db import models
+from django.http import HttpResponse
+
+from users.models import User
+from users.views import UserView
+
+from project.models import Project
+from project.handlers import ProjectHandler
 
 
-pmt = PaymentTransactions.objects.get(payment_transaction_id="test-transaction-id-1211145") 
+user = User.objects.get(user_id="example-user-12345")
