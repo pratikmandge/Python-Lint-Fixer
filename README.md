@@ -45,61 +45,27 @@ A comprehensive Python linting and formatting extension for Visual Studio Code t
 4. **Click the lightbulb button** in the status bar or press `Ctrl+Shift+Q`
 
 ### Usage
-
+Before:
 ```python
-# Before formatting
-from payments.models import PaymentTransactions
-from accounting.models import Allocation, CashFlow, ColendingAllocation, ColendingCashFlow
-from bookkeeping.models import *
-from datetime import datetime
-
-pmt = PaymentTransactions.objects.get(payment_transaction_id="test-transaction-id-1211145")
-
-def complex_function(app, node, var, view, template, default=None, source=None, **kwargs):
-    pass
+import random,math
+def generate_values():
+    for i in range(0,10):print(i*random.random())
+class Dummy:pass
 ```
 
+After:
 ```python
-# After formatting
-from datetime import datetime
+import math
+import random
 
-from accounting.models import (
-    Allocation, CashFlow, ColendingAllocation, ColendingCashFlow
-)
 
-from bookkeeping.models import *
+def generate_values():
+    for i in range(0, 10):
+        print(i * random.random())
 
-from payments.models import PaymentTransactions
 
-pmt = PaymentTransactions.objects.get(
-    payment_transaction_id='test-transaction-id-1211145'
-)
-
-def complex_function(
-    app,
-    node,
-    var,
-    view,
-    template,
-    default=None,
-    source=None,
-    **kwargs
-):
+class Dummy:
     pass
-```
-
-## ⚙️ Configuration
-
-Add to your VS Code settings:
-
-```json
-{
-  "pythonLintFixer.maxLineLength": 85,
-  "pythonLintFixer.enableQuotesFix": true,
-  "pythonLintFixer.enableImportSort": true,
-  "pythonLintFixer.enableSpacingFix": true,
-  "pythonLintFixer.autoFixOnSave": false
-}
 ```
 
 ## 🎯 Error Codes
@@ -141,11 +107,11 @@ from flask import Flask
 
 ### Project Imports (grouped by app)
 ```python
-from accounting.models import User
-from accounting.views import UserView
+from users.models import User
+from users.views import UserView
 
-from payments.models import Payment
-from payments.handlers import PaymentHandler
+from project.models import Project
+from project.handlers import ProjectHandler
 ```
 
 ## 🛠️ Development
@@ -220,8 +186,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Issues:** [GitHub Issues](https://github.com/pratik-mandge/python-lint-fixer/issues)
 - **Documentation:** [Wiki](https://github.com/pratik-mandge/python-lint-fixer/wiki)
-- **Email:** pratik.mandge@example.com
+- **Email:** pratikmandgebussiness@gmail.com
 
 ---
 
-**Made with ❤️ by Pratik Mandge** 
+**Made with ❤️ by Pratik Mandge**
