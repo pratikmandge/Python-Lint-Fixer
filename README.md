@@ -4,6 +4,9 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![VS Code](https://img.shields.io/badge/VS%20Code-1.60.0+-blue.svg)](https://code.visualstudio.com/)
 
+![Python Lint Fixer Demo](https://github.com/pratikmandge/python-lint-fixer/python-lint-fixer-extension.gif/
+
+
 A comprehensive Python linting and formatting extension for Visual Studio Code that enforces consistent code style and automatically fixes common issues.
 
 ## ✨ Features
