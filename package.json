@@ -4,6 +4,7 @@
     "description": "A comprehensive Python linting and formatting extension with custom rules",
     "version": "0.1.0",
     "publisher": "PratikMandge",
+    "icon": "icon.png",
     "engines": {
         "vscode": "^1.60.0"
     },
