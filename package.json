@@ -1,114 +1,114 @@
 {
-  "name": "python-lint-fixer",
-  "displayName": "Python Lint Fixer",
-  "description": "A comprehensive Python linting and formatting extension with custom rules",
-  "version": "0.1.0",
-  "publisher": "pratik_mandge",
-  "engines": {
-    "vscode": "^1.60.0"
-  },
-  "categories": [
-    "Linters",
-    "Formatters"
-  ],
-  "activationEvents": [
-    "onLanguage:python"
-  ],
-  "main": "./out/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "python-lint-fixer.fixFile",
-        "title": "Fix Python File",
-        "category": "Python Lint Fixer"
-      },
-      {
-        "command": "python-lint-fixer.fixWorkspace",
-        "title": "Fix All Python Files in Workspace",
-        "category": "Python Lint Fixer"
-      }
-    ],
-    "keybindings": [
-      {
-        "command": "python-lint-fixer.fixFile",
-        "key": "ctrl+shift+q",
-        "when": "editorLangId == python"
-      }
-    ],
-    "menus": {
-      "editor/context": [
-        {
-          "command": "python-lint-fixer.fixFile",
-          "when": "editorLangId == python",
-          "group": "1_modification"
-        }
-      ],
-      "commandPalette": [
-        {
-          "command": "python-lint-fixer.fixFile",
-          "when": "editorLangId == python"
-        },
-        {
-          "command": "python-lint-fixer.fixWorkspace"
-        }
-      ]
+    "name": "python-lint-fixer",
+    "displayName": "Python Lint Fixer",
+    "description": "A comprehensive Python linting and formatting extension with custom rules",
+    "version": "0.1.0",
+    "publisher": "pratikmandge",
+    "engines": {
+        "vscode": "^1.60.0"
     },
-    "statusBar": {
-      "items": [
-        {
-          "id": "python-lint-fixer.fixFile",
-          "name": "Fix Python File",
-          "text": "$(lightbulb) Fix Python",
-          "tooltip": "Fix current Python file",
-          "command": "python-lint-fixer.fixFile",
-          "when": "editorLangId == python"
+    "categories": [
+        "Linters",
+        "Formatters"
+    ],
+    "activationEvents": [
+        "onLanguage:python"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "python-lint-fixer.fixFile",
+                "title": "Fix Python File",
+                "category": "Python Lint Fixer"
+            },
+            {
+                "command": "python-lint-fixer.fixWorkspace",
+                "title": "Fix All Python Files in Workspace",
+                "category": "Python Lint Fixer"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "python-lint-fixer.fixFile",
+                "key": "ctrl+shift+q",
+                "when": "editorLangId == python"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "python-lint-fixer.fixFile",
+                    "when": "editorLangId == python",
+                    "group": "1_modification"
+                }
+            ],
+            "commandPalette": [
+                {
+                    "command": "python-lint-fixer.fixFile",
+                    "when": "editorLangId == python"
+                },
+                {
+                    "command": "python-lint-fixer.fixWorkspace"
+                }
+            ]
+        },
+        "statusBar": {
+            "items": [
+                {
+                    "id": "python-lint-fixer.fixFile",
+                    "name": "Fix Python File",
+                    "text": "$(lightbulb) Fix Python",
+                    "tooltip": "Fix current Python file",
+                    "command": "python-lint-fixer.fixFile",
+                    "when": "editorLangId == python"
+                }
+            ]
+        },
+        "configuration": {
+            "title": "Python Lint Fixer",
+            "properties": {
+                "pythonLintFixer.maxLineLength": {
+                    "type": "number",
+                    "default": 85,
+                    "description": "Maximum line length before wrapping"
+                },
+                "pythonLintFixer.enableQuotesFix": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable fixing double quotes to single quotes"
+                },
+                "pythonLintFixer.enableImportSort": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable import sorting and grouping"
+                },
+                "pythonLintFixer.enableSpacingFix": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable spacing fixes (class/method spacing)"
+                }
+            }
         }
-      ]
     },
-    "configuration": {
-      "title": "Python Lint Fixer",
-      "properties": {
-        "pythonLintFixer.maxLineLength": {
-          "type": "number",
-          "default": 85,
-          "description": "Maximum line length before wrapping"
-        },
-        "pythonLintFixer.enableQuotesFix": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable fixing double quotes to single quotes"
-        },
-        "pythonLintFixer.enableImportSort": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable import sorting and grouping"
-        },
-        "pythonLintFixer.enableSpacingFix": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable spacing fixes (class/method spacing)"
-        }
-      }
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.60.0",
+        "@types/node": "^16.0.0",
+        "@typescript-eslint/eslint-plugin": "^5.0.0",
+        "@typescript-eslint/parser": "^5.0.0",
+        "eslint": "^8.0.0",
+        "typescript": "^4.5.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pratikmandge/python-lint-fixer"
     }
-  },
-  "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
-  },
-  "devDependencies": {
-    "@types/vscode": "^1.60.0",
-    "@types/node": "^16.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
-    "eslint": "^8.0.0",
-    "typescript": "^4.5.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/your-org/python-lint-fixer"
-  }
-} 
+}
