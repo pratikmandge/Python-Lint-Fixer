@@ -186,7 +186,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Issues:** [GitHub Issues](https://github.com/pratik-mandge/python-lint-fixer/issues)
+- **Issues:** [GitHub Issues](https://github.com/pratikmandge/Python-Lint-Fixer/issues)
 - **Documentation:** [Wiki](https://github.com/pratikmandge/Python-Lint-Fixer/blob/master/wiki.md)
 
 ---
